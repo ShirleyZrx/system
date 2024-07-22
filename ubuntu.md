@@ -13,11 +13,13 @@ apt-get install aptitude
 ## system info
 ### cpu info
 * detail
+```
 $ lscpu
+```
 
 * cpu simple info
-$ cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c
 ```
+$ cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c
     128  AMD EPYC 7742 64-Core Processor
 ```
 
