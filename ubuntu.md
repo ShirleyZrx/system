@@ -17,16 +17,21 @@ $ lscpu
 
 * cpu simple info
 $ cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c
+```
     128  AMD EPYC 7742 64-Core Processor
+```
 
 ### mem info
+```
 $ free -m
               total        used        free      shared  buff/cache   available
 Mem:         515846        6205      503988          43        5651      507071
 Swap:          8191           0        8191
+```
 
 ### disk info
 $ sudo fdisk -l | grep Disk
+```
 Disk /dev/loop0: 63.29 MiB, 66359296 bytes, 129608 sectors
 Disk /dev/loop1: 49.86 MiB, 52260864 bytes, 102072 sectors
 Disk /dev/loop2: 91.85 MiB, 96292864 bytes, 188072 sectors
@@ -40,9 +45,11 @@ Disk /dev/sda: 893.14 GiB, 958999298048 bytes, 1873045504 sectors
 Disk model: Logical Volume
 Disklabel type: gpt
 Disk identifier: CC9D6476-2D64-4623-85EC-569F5FDAD7B1
+```
 
 ### list Disk type: type=disk
 $ lsblk
+```
 NAME    MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
 loop0     7:0    0  63.3M  1 loop
 loop1     7:1    0  49.9M  1 loop
@@ -58,6 +65,7 @@ sda       8:0    0 893.1G  0 disk
 ├─sda4    8:4    0   300G  0 part /var
 └─sda5    8:5    0 489.1G  0 part /
 nvme0n1 259:0    0   3.5T  0 disk /data
+```
 
 ### disk category: 0 for SSD, 1 for SATA
 $ cat /sys/block/nvme0n1/queue/rotational
