@@ -68,11 +68,13 @@ nvme0n1 259:0    0   3.5T  0 disk /data
 ```
 
 ### disk category: 0 for SSD, 1 for SATA
+```
 $ cat /sys/block/nvme0n1/queue/rotational
 0  # 0 for SSD，1 for SATA
 
 $ cat /sys/block/sda/queue/rotational
 0
+```
 
 ### disk usage for each user
 $ du -sh /home/*
