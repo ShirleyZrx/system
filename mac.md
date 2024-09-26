@@ -14,11 +14,6 @@ alias cdsct='cd /Users/zhangruixiang/my_data/codes/sctool'
 alias gt='git'
 alias vm='vim'
 alias pgh="~/.pg-higgs.exp"
-alias pgl="~/.pg-lepton.exp"
-alias pght="~/.pg-higgs-tech.exp"
-alias pgg="~/.pg-gluon.exp"
-alias pgt="~/.pg-telemetry.exp"
-alias pgl="~/.pg-lepton.exp"
 alias nova="mysql -h dataops-olap.st-sh-01.sensecore.cn -u sensenova -P 33306 -p "
 alias nova="~/.nova.exp"
 
