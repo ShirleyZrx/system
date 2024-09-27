@@ -18,19 +18,20 @@ alias nova="~/.nova.exp"
 ```bash
 #!/usr/bin/expect
 
-set un [lindex $argv 0]
-set ip [lindex $argv 1]
-set pw [lindex $argv 2]
+set ip [lindex $argv 0]
+set jump jumphost
+set user username
+set pwd password
 
 set timeout 10
 
-spawn ssh $un@$ip
+spawn ssh $user@$jump
 
-expect "password:" {send "$pw\r"}
+expect "password:" {send "$pwd\r"}
 
 set mfa [exec sh -c {oathtool --totp -b -d 6 MRYTGNDIGMYDQZZQOBZDO4DU | awk '{print $1}'}]
-# set mfa [oathtool --totp -b -d 6 MRYTGNDIGMYDQZZQOBZDO4DU | awk '{print $1}']
 
 expect "*auth]:" {send "$mfa\r"}
+expect "Opt> " {send "$ip\r"}
 interact
 ```
